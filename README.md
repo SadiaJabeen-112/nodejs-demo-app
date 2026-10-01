@@ -1,101 +1,264 @@
-\# Node.js CI/CD Demo Application
+Node.js CI/CD Demo Application
 
 
 
-A simple Node.js web application demonstrating an automated CI/CD pipeline using GitHub Actions, Docker, and Docker Hub.
+This project is a simple Node.js web application created as part of a DevOps internship task.
 
 
 
-\## Project Overview
+The project demonstrates how a basic application can be tested, containerized with Docker, and automatically published to Docker Hub using GitHub Actions.
 
 
 
-This project demonstrates a complete CI/CD workflow that automatically:
+Project flow
 
 
 
-1\. Installs Node.js dependencies
+Code pushed to the main branch
 
-2\. Runs automated tests
+&#x20;       ?
 
-3\. Builds a Docker image
+Application tests run
 
-4\. Authenticates with Docker Hub
+&#x20;       ?
 
-5\. Pushes the Docker image to Docker Hub
+Docker image is built
 
+&#x20;       ?
 
+Docker Hub authentication
 
-\## Technologies Used
+&#x20;       ?
 
-
-
-| Technology | Purpose |
-
-|---|---|
-
-| Node.js | Application runtime |
-
-| Node.js Test Runner | Automated testing |
-
-| Docker | Application containerization |
-
-| GitHub | Source code management |
-
-| GitHub Actions | CI/CD automation |
-
-| Docker Hub | Container image registry |
+Docker image is published
 
 
 
-\## Application
+
+
+Technologies Used
 
 
 
-The application is a simple Node.js HTTP server running on port `3000`.
+Node.js
+
+Docker
+
+Git
+
+GitHub
+
+GitHub Actions
+
+Docker Hub
 
 
 
-It displays:
+
+
+Application
 
 
 
-\- Hello from Node.js!
-
-\- CI/CD Pipeline Demo
-
-\- Deployed using GitHub Actions and Docker
+The application runs on port 3000.
 
 
 
-\## Project Structure
+When the application is started, open:
 
 
 
-```text
+http://localhost:3000
+
+
+
+The application displays:
+
+
+
+Hello from Node.js!
+
+
+
+CI/CD Pipeline Demo
+
+
+
+Deployed using GitHub Actions and Docker.
+
+
+
+
+
+Run Locally
+
+
+
+Install dependencies:
+
+
+
+npm install
+
+
+
+Run the tests:
+
+
+
+npm test
+
+
+
+Start the application:
+
+
+
+npm start
+
+
+
+Then open:
+
+
+
+http://localhost:3000
+
+
+
+
+
+Run with Docker
+
+
+
+Build the image:
+
+
+
+docker build -t nodejs-demo-app .
+
+
+
+Start the container:
+
+
+
+docker run -d --name nodejs-demo-container -p 3000:3000 nodejs-demo-app:latest
+
+
+
+Then open:
+
+
+
+http://localhost:3000
+
+
+
+
+
+Docker Hub
+
+
+
+Docker image:
+
+
+
+sadiajabeen0112/nodejs-demo-app:latest
+
+
+
+The image can be pulled using:
+
+
+
+docker pull sadiajabeen0112/nodejs-demo-app:latest
+
+
+
+
+
+CI/CD Pipeline
+
+
+
+The GitHub Actions workflow is stored in:
+
+
+
+.github/workflows/main.yml
+
+
+
+The workflow runs automatically when code is pushed to the main branch.
+
+
+
+It performs the following steps:
+
+
+
+Checkout the source code
+
+Install dependencies
+
+Run application tests
+
+Build the Docker image
+
+Log in to Docker Hub
+
+Push the Docker image
+
+
+
+
+
+Project Structure
+
+
 
 nodejs-demo-app/
 
-+-- .github/
+&#x20;   .github/
 
-¦   +-- workflows/
+&#x20;       workflows/
 
-¦       +-- main.yml
+&#x20;           main.yml
 
-+-- app.js
+&#x20;   app.js
 
-+-- app.test.js
+&#x20;   app.test.js
 
-+-- Dockerfile
+&#x20;   Dockerfile
 
-+-- .dockerignore
+&#x20;   .dockerignore
 
-+-- .gitignore
+&#x20;   .gitignore
 
-+-- package.json
+&#x20;   package.json
 
-+-- package-lock.json
+&#x20;   package-lock.json
 
-+-- README.md
+&#x20;   README.md
 
+
+
+
+
+Result
+
+
+
+The application is tested automatically through GitHub Actions. After the tests pass, the Docker image is built and published to Docker Hub.
+
+
+
+Screenshots
+
+
+
+Screenshots of the application, GitHub Actions pipeline, and Docker Hub image will be added here.
 
