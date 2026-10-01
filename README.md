@@ -1,112 +1,101 @@
-# Node.js CI/CD Demo Application
+\# Node.js CI/CD Demo Application
 
-A simple Node.js web application demonstrating an automated CI/CD pipeline using GitHub Actions and Docker.
 
-## Project Overview
 
-This project demonstrates:
+A simple Node.js web application demonstrating an automated CI/CD pipeline using GitHub Actions, Docker, and Docker Hub.
 
-• Node.js application development
-• Automated application testing
-• Docker containerization
-• GitHub Actions CI/CD
-• Docker Hub image publishing
 
-## Technologies Used
 
-• Node.js
-• Docker
-• GitHub
-• GitHub Actions
-• Docker Hub
+\## Project Overview
 
-## Application
 
-The application runs on port 3000.
 
-When opened in a browser, it displays:
+This project demonstrates a complete CI/CD workflow that automatically:
 
-Hello from Node.js!
 
-CI/CD Pipeline Demo
 
-Deployed using GitHub Actions and Docker.
+1\. Installs Node.js dependencies
 
-## Run Locally
+2\. Runs automated tests
 
-Install dependencies:
+3\. Builds a Docker image
 
-npm install
+4\. Authenticates with Docker Hub
 
-Run tests:
+5\. Pushes the Docker image to Docker Hub
 
-npm test
 
-Start the application:
 
-npm start
+\## Technologies Used
 
-Open:
 
-http://localhost:3000
 
-## Run with Docker
+| Technology | Purpose |
 
-Build the Docker image:
+|---|---|
 
-docker build -t nodejs-demo-app .
+| Node.js | Application runtime |
 
-Run the container:
+| Node.js Test Runner | Automated testing |
 
-docker run -d --name nodejs-demo-container -p 3000:3000 nodejs-demo-app:latest
+| Docker | Application containerization |
 
-Open:
+| GitHub | Source code management |
 
-http://localhost:3000
+| GitHub Actions | CI/CD automation |
 
-## Docker Hub Image
+| Docker Hub | Container image registry |
 
-Docker Hub:
 
-sadiajabeen0112/nodejs-demo-app
 
-Pull the image:
+\## Application
 
-docker pull sadiajabeen0112/nodejs-demo-app:latest
 
-## CI/CD Pipeline
 
-The GitHub Actions workflow is triggered whenever code is pushed to the main branch.
+The application is a simple Node.js HTTP server running on port `3000`.
 
-Pipeline flow:
 
-GitHub Push
-    ?
-Checkout Code
-    ?
-Install Dependencies
-    ?
-Run Tests
-    ?
-Build Docker Image
-    ?
-Login to Docker Hub
-    ?
-Push Docker Image
 
-The Docker Hub credentials are stored securely as GitHub Actions secrets:
+It displays:
 
-DOCKERHUB_USERNAME
 
-DOCKERHUB_TOKEN
 
-## Workflow File
+\- Hello from Node.js!
 
-The CI/CD workflow is located at:
+\- CI/CD Pipeline Demo
 
-.github/workflows/main.yml
+\- Deployed using GitHub Actions and Docker
 
-## Result
 
-The pipeline automatically tests the application, builds the Docker image, and publishes the image to Docker Hub after a successful test.
+
+\## Project Structure
+
+
+
+```text
+
+nodejs-demo-app/
+
++-- .github/
+
+¦   +-- workflows/
+
+¦       +-- main.yml
+
++-- app.js
+
++-- app.test.js
+
++-- Dockerfile
+
++-- .dockerignore
+
++-- .gitignore
+
++-- package.json
+
++-- package-lock.json
+
++-- README.md
+
 
